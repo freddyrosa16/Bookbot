@@ -1,4 +1,10 @@
-def chars_dict_to_sorted_list():
+def chars_dict_to_sorted_list(char_count_dict, file_path):
+    char_count_list = []
+    count_dict = char_count(file_path)
+    for key in count_dict:
+        char_count_list.append((key, count_dict[key]))
+    sorted_list_count = sorted(char_count_list, reverse=True, key=sort_on)
+    return sorted_list_count
 
 
 def sort_on(character_count):
